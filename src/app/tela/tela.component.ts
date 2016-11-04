@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+import { EventEmitterService } from "../services/event-emitter.service";
 
 @Component({
   selector: 'app-tela',
   templateUrl: './tela.component.html',
   styleUrls: ['./tela.component.css']
 })
-export class TelaComponent implements OnInit {
+export class TelaComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor() {
+    EventEmitterService.get('textChange').subscribe(data => console.log('TelaComponent:', data));
+  }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  ngOnDestroy() {
+    EventEmitterService.get('textChange').unsubscribe();
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { EventEmitterService } from "../services/event-emitter.service";
 
@@ -10,15 +10,13 @@ import { EventEmitterService } from "../services/event-emitter.service";
 export class FormularioComponent implements OnInit {
 
   texto: string;
-  //@Output() onTexto: any = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() { }
 
   clica() {
-    //this.onTexto.emit(this.texto);
-    EventEmitterService.get('text_change').emit(this.texto);
+    EventEmitterService.get('textChange').emit(this.texto);
   }
 
   alerta() {
