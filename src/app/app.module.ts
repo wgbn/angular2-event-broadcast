@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { PaginaComponent } from './pagina/pagina.component';
+import { TelaComponent } from './tela/tela.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PaginaComponent,
+    TelaComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
